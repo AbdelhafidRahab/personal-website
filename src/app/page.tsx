@@ -1,4 +1,6 @@
 import { Hero } from "@/components/Hero";
+import { Skills } from "@/components/Skills";
+import { Timeline } from "@/components/Timeline";
 
 export default function Home() {
   return (
@@ -9,6 +11,8 @@ export default function Home() {
       
       {/* Sections */}
       <Hero />
+      <Timeline />
+      <Skills />
       
       {/* for About/Skills sections here later */}
     </main>

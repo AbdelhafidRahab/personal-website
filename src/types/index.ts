@@ -9,15 +9,21 @@ export interface Project {
   category: 'deployed' | 'open-source' | 'product';
 }
 
-export interface Experience {
-  company: string;
-  position: string;
-  period: string;
+export interface TimelineItemDetail {
+  title: string;
+  organization: string;
   description: string;
+  tags?: string[];
+}
+
+export interface TimelineRow {
+  period: string;
+  work?: TimelineItemDetail[];
+  education?: TimelineItemDetail[];
 }
 
 export interface Skill {
   name: string;
-  category: 'frontend' | 'backend' | 'devops' | 'soft';
-  proficiency: number; // 1-100
+  category: 'technical' | 'soft';
+  highlight?: boolean;
 }

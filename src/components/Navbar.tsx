@@ -14,16 +14,7 @@ export const Navbar = () => {
 
   return (
     <nav className="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Brand */}
-        <Link 
-          href="/" 
-          className="text-2xl font-bold tracking-tighter text-white relative z-50"
-          onClick={() => setIsOpen(false)}
-        >
-          Abdelhafid Rahab
-        </Link>
-
+      <div className="container mx-auto px-6 h-20 flex items-center justify-center">
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
