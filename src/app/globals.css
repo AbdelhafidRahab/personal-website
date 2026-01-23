@@ -16,6 +16,6 @@
   }
   
   .heading-gradient {
-    @apply bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent;
+    @apply bg-linear-to-b from-white to-white/50 bg-clip-text text-transparent;
   }
 }

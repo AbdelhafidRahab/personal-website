@@ -29,7 +29,7 @@ export const Timeline = () => {
                       <div key={jobIndex} className="w-full lg:pr-8 relative">
                         {/* Connector Dot (Only for the first item in the list) */}
                         {jobIndex === 0 && (
-                          <span className="hidden lg:block absolute top-6 -right-[37px] w-2.5 h-2.5 bg-indigo-500 rounded-full z-20" />
+                          <span className="hidden lg:block absolute top-6 -right-9.25 w-2.5 h-2.5 bg-indigo-500 rounded-full z-20" />
                         )}
                         
                         <div className="bg-neutral-900/20 p-6 rounded-xl border border-neutral-800/50 hover:border-neutral-700 transition-colors h-full">
@@ -49,8 +49,8 @@ export const Timeline = () => {
 
                 {/* --- Center: PERIOD BUBBLE --- */}
                 {/* Placed absolutely to stay at the top of the block */}
-                <div className="flex items-start justify-center lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 z-10 mb-8 lg:mb-0 lg:pt-0 order-first lg:order-none">
-                  <div className="flex items-center justify-center w-[140px] py-2 bg-neutral-950 border border-neutral-700 rounded-full text-xs font-bold text-white shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                <div className="flex items-start justify-center lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 z-10 mb-8 lg:mb-0 lg:pt-0 order-first lg:order-0">
+                  <div className="flex items-center justify-center w-35 py-2 bg-neutral-950 border border-neutral-700 rounded-full text-xs font-bold text-white shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                     {row.period}
                   </div>
                 </div>
@@ -61,18 +61,18 @@ export const Timeline = () => {
                     row.education.map((edu, eduIndex) => (
                       <div key={eduIndex} className="w-full lg:pl-8 relative">
                          {/* Connector Dot (Only for the first item) */}
-                         {eduIndex === 0 && (
-                           <span className="hidden lg:block absolute top-6 -left-[37px] w-2.5 h-2.5 bg-emerald-500 rounded-full z-20" />
-                         )}
-                         
-                         <div className="bg-neutral-900/20 p-6 rounded-xl border border-neutral-800/50 hover:border-neutral-700 transition-colors h-full">
-                          <h3 className="text-xl font-bold text-white mb-1">{edu.title}</h3>
-                          <p className="text-emerald-400 text-sm font-semibold mb-3">{edu.organization}</p>
-                          <p className="text-neutral-400 text-sm leading-relaxed">
-                            {edu.description}
-                          </p>
-                        </div>
-                     </div>
+                          {eduIndex === 0 && (
+                            <span className="hidden lg:block absolute top-6 -left-9.25 w-2.5 h-2.5 bg-emerald-500 rounded-full z-20" />
+                          )}
+                          
+                          <div className="bg-neutral-900/20 p-6 rounded-xl border border-neutral-800/50 hover:border-neutral-700 transition-colors h-full">
+                            <h3 className="text-xl font-bold text-white mb-1">{edu.title}</h3>
+                            <p className="text-emerald-400 text-sm font-semibold mb-3">{edu.organization}</p>
+                            <p className="text-neutral-400 text-sm leading-relaxed">
+                              {edu.description}
+                            </p>
+                          </div>
+                      </div>
                     ))
                   ) : (
                     <div className="hidden lg:block" />

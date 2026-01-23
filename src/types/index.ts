@@ -2,11 +2,15 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  techStack: string[];
-  link?: string;
-  github?: string;
-  image: string;
-  category: 'deployed' | 'open-source' | 'product';
+  image: string; // Path to image in public folder
+  techStack: string[]; // specific technologies used by me
+  category: 'proprietary' | 'open-source';
+  role: 'Owner' | 'Creator' | 'Co-Creator' | 'Core Contributor' | 'Contributor' | 'Full Stack Developer' | 'Frontend Developer' | 'Backend Developer'; 
+  stats?: string;
+  links: {
+    demo?: string; // Live Link
+    repo?: string; // GitHub Link (optional)
+  };
 }
 
 export interface TimelineItemDetail {
