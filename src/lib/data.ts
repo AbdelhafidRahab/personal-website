@@ -60,6 +60,7 @@ export const timelineData: TimelineRow[] = [
 export const skills: Skill[] = [
   // Technical
   { name: "JavaScript", category: "technical", highlight: true},
+  { name: "TypeScript", category: "technical", highlight: true},
   { name: "Node.js", category: "technical", highlight: true},
   { name: "NestJS", category: "technical", highlight: true},
   { name: "Next.js", category: "technical", highlight: true},
