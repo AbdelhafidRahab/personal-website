@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { Link, usePathname as useI18nPathname, useRouter } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 const Icons = {
   Home: ({ className }: { className?: string }) => (
@@ -22,25 +23,40 @@ const Icons = {
   ),
 };
 
-const navLinks = [
-  { name: "Home", href: "/", icon: Icons.Home },
-  { name: "Projects", href: "/projects", icon: Icons.Projects },
-  { name: "Contact", href: "/contact", icon: Icons.Contact },
-  { name: "Products", href: "/products", icon: Icons.Products },
-  { name: "Academy", href: "/academy", icon: Icons.Academy },
-];
-
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const i18nPathname = useI18nPathname(); // Path without locale for switching
+  const t = useTranslations('Navbar');
 
-  // Helper to check if link is active
-  const isActive = (href: string) => 
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const navLinks = [
+    { name: t('Home'), href: "/", icon: Icons.Home },
+    { name: t('Projects'), href: "/projects", icon: Icons.Projects },
+    { name: t('Contact'), href: "/contact", icon: Icons.Contact },
+    { name: t('Products'), href: "/products", icon: Icons.Products },
+    { name: t('Academy'), href: "/academy", icon: Icons.Academy },
+  ];
+
+  // Helper to check if link is active (handles /ar/projects and /en/projects)
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/ar' || pathname === '/en';
+    return pathname.includes(href);
+  };
+
+  const switchLanguage = (newLocale: string) => {
+    router.replace(i18nPathname, { locale: newLocale });
+  };
 
   return (
     <nav className="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between md:justify-center">
+      <div className="container mx-auto px-6 h-20 flex items-center justify-between md:justify-center relative">
+
+        {/* Language Switcher (Desktop: Absolute Left) */}
+        <div className="hidden md:flex absolute left-6 gap-2">
+            <button onClick={() => switchLanguage('en')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">English</button>
+            <button onClick={() => switchLanguage('ar')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">العربية</button>
+        </div>
         
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-10">
@@ -67,6 +83,12 @@ export const Navbar = () => {
 
         {/* Mobile Menu Button (Aligned Right) */}
         <div className="md:hidden flex w-full justify-end">
+          {/* Language Switcher (Mobile) */}
+          <div className="flex gap-2">
+              <button onClick={() => switchLanguage('en')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">English</button>
+              <button onClick={() => switchLanguage('ar')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">العربية</button>
+          </div>
+            
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="relative z-50 text-neutral-300 hover:text-white transition-colors p-2"
