@@ -5,5 +5,91 @@
     "Contact": "Contact",
     "Products": "Products",
     "Academy": "Academy"
+  },
+  "Contact": {
+    "validation": {
+      "name_min": "Name must be at least 3 characters.",
+      "email_invalid": "Please enter a valid email address.",
+      "subject_min": "Subject must be at least 5 characters.",
+      "message_min": "Message must be at least 10 characters."
+    }
+  },
+  "About": {
+    "intro": "Expert in creating digital solutions. Designing, building, and shipping systems that address user needs and deliver smooth experiences is where I excel. Freelancing has equipped me to expertly manage every project phase: planning, requirements, design, writing clean/maintainable code, testing, and production deployment."
+  },
+  "Timeline": {
+    "intaj": {
+      "title": "Full Stack Developer",
+      "org": "@Intaj Company",
+      "desc": "Core member of the team behind 1Tik, The biggest social network platform in Algeria. Contributor to other projects."
+    },
+    "self_employed": {
+      "title": "Software Engineer",
+      "org": "Self-Employed",
+      "desc": "Led full-cycle development for multiple projects, translating requirements into scalable solutions. Collaborated with stakeholders achieving 100% on-time delivery."
+    },
+    "freelance_web": {
+      "title": "Web Developer",
+      "org": "Freelance",
+      "desc": "Built responsive web applications, ensuring optimal user experience across devices. Implemented features based on client requirements, conducted testing, and managed deployments."
+    },
+    "freelance_mobile": {
+      "title": "Mobile Developer",
+      "org": "Freelance",
+      "desc": "Developed cross-platform apps. Contributed to all stages from concept to deployment, focusing on responsive design and performance optimization."
+    },
+    "master": {
+      "title": "Master's in Distributed Architecture",
+      "org": "Larbi Ben M'Hidi University",
+      "desc": "Specialized in distributed systems and software architecture."
+    },
+    "bachelor": {
+      "title": "Bachelor's in Computer Science",
+      "org": "Larbi Ben M'Hidi University",
+      "desc": "Foundation in computer science principles and software engineering."
+    }
+  },
+  "Skills": {
+    "problem_solving": "Problem Solving",
+    "product_thinking": "Product Thinking",
+    "system_design": "System Design",
+    "time_management": "Time Management",
+    "team_collaboration": "Team Collaboration",
+    "communication": "Communication",
+    "agile": "Agile (Scrum)",
+    "leadership": "Team Leadership",
+    "project_management": "Project Management"
+  },
+  "Projects": {
+    "1tik": {
+      "title": "1Tik Social Network",
+      "desc": "The largest social networking platform in Algeria. Core member of the team, Responsible for critical modules, ensuring scalability and high performance.",
+      "role": "Core Contributor",
+      "stats": "150k+ Users • 100k+ Downloads"
+    },
+    "amazon": {
+      "title": "Clone Amazon Website",
+      "desc": "A Full Stack Amazon website clone, built with Laravel and Blade templating. Features user authentication, product listings, shopping cart, payment and order management.",
+      "role": "Creator",
+      "stats": "Open Source"
+    },
+    "medium": {
+      "title": "Medium Clone",
+      "desc": "A fully-functional Medium-style blogging platform. Supports article creation, editing, tagging, and commenting with a focus on a clean writing experience.",
+      "role": "Creator",
+      "stats": "Open Source"
+    },
+    "whatsapp": {
+      "title": "WhatsApp Clone",
+      "desc": "A full-stack WhatsApp clone built with Spring Boot (backend) and Angular (frontend). Implements real-time messaging and follows professional development practices for structure and scalability.",
+      "role": "Creator",
+      "stats": "Open Source"
+    },
+    "personal": {
+      "title": "Personal Website",
+      "desc": "My professional website built with the latest Next.js features. Open sourced to help other developers learn modern architecture.",
+      "role": "Creator",
+      "stats": "Open Source"
+    }
   }
 }

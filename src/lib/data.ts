@@ -1,15 +1,15 @@
 import { TimelineRow, Skill, Project } from "@/types";
 
-export const aboutIntro = "Passionate about crafting digital solutions. My expertise lies in designing, building, and shipping systems that directly address user needs and deliver smooth experiences. Freelancing has equipped me to expertly manage every project phase: planning, requirements, design, writing clean/maintainable code, testing, and production deployment.";
+export const aboutIntro = "intro";
 
 export const timelineData: TimelineRow[] = [
   {
     period: "Nov 2025 - Present",
     work: [
       {
-        title: "Full Stack Developer",
-        organization: "@Intaj Company",
-        description: "Core member of the team behind 1Tik, The biggest social network platform in Algeria. Contributor to other projects."
+        title: "intaj",
+        organization: "intaj",
+        description: "intaj"
       },
     ]
   },
@@ -17,9 +17,9 @@ export const timelineData: TimelineRow[] = [
     period: "Dec 2024 - Present",
     work: [
       {
-        title: "Software Engineer",
-        organization: "Self-Employed",
-        description: "Led full-cycle development for multiple projects, translating requirements into scalable solutions. Collaborated with stakeholders achieving 100% on-time delivery."
+        title: "self_employed",
+        organization: "self_employed",
+        description: "self_employed"
       }
     ]
   },
@@ -27,21 +27,21 @@ export const timelineData: TimelineRow[] = [
     period: "2023 - 2025",
     work: [
       {
-        title: "Web Developer",
-        organization: "Freelance",
-        description: "Built responsive web applications, ensuring optimal user experience across devices. Implemented features based on client requirements, conducted testing, and managed deployments"
+        title: "freelance_web",
+        organization: "freelance_web",
+        description: "freelance_web"
       },
       {
-        title: "Mobile Developer",
-        organization: "Freelance",
-        description: "Developed cross-platform apps. Contributed to all stages from concept to deployment, focusing on responsive design and performance optimization."
+        title: "freelance_mobile",
+        organization: "freelance_mobile",
+        description: "freelance_mobile"
       },
     ],
     education: [
       {
-        title: "Master's in Distributed Architecture",
-        organization: "Larbi Ben M'Hidi University",
-        description: "Specialized in distributed systems and software architecture."
+        title: "master",
+        organization: "master",
+        description: "master"
       }
     ]
   },
@@ -49,9 +49,9 @@ export const timelineData: TimelineRow[] = [
     period: "2020 - 2023",
     education: [
       {
-        title: "Bachelor's in Computer Science",
-        organization: "Larbi Ben M'Hidi University",
-        description: "Foundation in computer science principles and software engineering."
+        title: "bachelor",
+        organization: "bachelor",
+        description: "bachelor"
       }
     ]
   }
@@ -85,35 +85,35 @@ export const skills: Skill[] = [
   { name: "Linux", category: "technical" },
   
   // Soft Skills
-  { name: "Problem Solving", category: "soft", highlight: true},
-  { name: "Product Thinking", category: "soft", highlight: true},
-  { name: "System Design", category: "soft", highlight: true},
-  { name: "Time Management", category: "soft", highlight: true},
-  { name: "Team Collaboration", category: "soft", highlight: true},
-  { name: "Communication", category: "soft", highlight: true},
-  { name: "Agile (Scrum)", category: "soft" },
-  { name: "Team Leadership", category: "soft", highlight: true},
-  { name: "Project Management", category: "soft" },
+  { name: "problem_solving", category: "soft", highlight: true},
+  { name: "product_thinking", category: "soft", highlight: true},
+  { name: "system_design", category: "soft", highlight: true},
+  { name: "time_management", category: "soft", highlight: true},
+  { name: "team_collaboration", category: "soft", highlight: true},
+  { name: "communication", category: "soft", highlight: true},
+  { name: "agile", category: "soft" },
+  { name: "leadership", category: "soft", highlight: true},
+  { name: "project_management", category: "soft" },
 ];
 
 export const projectsData: Project[] = [
   {
-    id: "1",
-    title: "1Tik Social Network",
-    description: "The largest social networking platform in Algeria. Core member of the team, Responsible for critical modules, ensuring scalability and high performance.",
+    id: "1tik", // The ID is the key to look up in JSON
+    title: "1tik",
+    description: "1tik",
     image: "/projects/1tik.jpeg",
     techStack: ["NestJS", "PostgreSQL", "Redis", "VueJs", "Docker", "Git", "GitLab"],
-    category: "proprietary",
+    category: "proprietary", // Changed from 'deployed' to match your input
     role: "Core Contributor",
-    stats: "150k+ Users • 100k+ Downloads",
+    stats: "150k+ Users",
     links: {
       demo: "https://1tik.social/",
     },
   },
   {
-    id: "2",
-    title: "Clone Amazon Website",
-    description: "A Full Stack Amazon website clone, built with Laravel and Blade templating. Features user authentication, product listings, shopping cart, payment and order management.",
+    id: "amazon",
+    title: "amazon",
+    description: "amazon",
     image: "/projects/amazon-clone.png",
     techStack: ["Laravel", "Blade", "Tailwind CSS", "JavaScript", "MySQL", "Git", "GitHub"],
     category: "open-source",
@@ -124,9 +124,9 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: "3",
-    title: "Medium Clone",
-    description: "A fully-functional Medium-style blogging platform. Supports article creation, editing, tagging, and commenting with a focus on a clean writing experience.",
+    id: "medium",
+    title: "medium",
+    description: "medium",
     image: "/projects/medium-clone.jpeg",
     techStack: ["Laravel", "Blade", "Tailwind CSS", "MySQL", "Git", "GitHub"],
     category: "open-source",
@@ -137,9 +137,9 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: "4",
-    title: "WhatsApp Clone",
-    description: "A full-stack WhatsApp clone built with Spring Boot (backend) and Angular (frontend). Implements real-time messaging and follows professional development practices for structure and scalability.",
+    id: "whatsapp",
+    title: "whatsapp",
+    description: "whatsapp",
     image: "/projects/whatsapp-clone.jpg",
     techStack: ["Spring Boot", "Angular", "WebSocket", "Maven", "Keycloak", "Git", "GitHub"],
     category: "open-source",
@@ -150,9 +150,9 @@ export const projectsData: Project[] = [
     },
   },
   {
-    id: "5",
-    title: "Personal Website",
-    description: "My professional website built with the latest Next.js features. Open sourced to help other developers learn modern architecture.",
+    id: "personal",
+    title: "personal",
+    description: "personal",
     image: "/projects/personal-website.png",
     techStack: ["Next.js", "Tailwind CSS", "Git", "GitHub"],
     category: "open-source",
