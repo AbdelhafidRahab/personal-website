@@ -6,7 +6,7 @@ export const routing = defineRouting({
   locales: ['en', 'ar'],
 
   // Used when no locale matches
-  defaultLocale: 'ar',
+  defaultLocale: 'en',
 
   // Optional: Set path prefix hidden for default locale?
   // We keep it 'always' to enforce /ar and /en consistency

@@ -1,11 +1,14 @@
+import { useTranslations } from "next-intl";
 import { timelineData } from "@/lib/data";
 
 export const Timeline = () => {
+  const t = useTranslations('Timeline');
+
   return (
     <section className="py-24 bg-black overflow-hidden">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-white mb-20 text-center tracking-tight">
-          Journey <span className="text-neutral-500">& Experience</span>
+          {t('journey')} <span className="text-neutral-500">{t('experience')}</span>
         </h2>
 
         <div className="relative">
@@ -14,8 +17,8 @@ export const Timeline = () => {
 
           {/* Column Headers */}
           <div className="hidden lg:flex justify-between text-xs font-bold text-neutral-500 uppercase tracking-widest mb-12">
-            <div className="w-5/12 text-right pr-8">Professional Experience</div>
-            <div className="w-5/12 text-left pl-8">Academic Career</div>
+            <div className="w-5/12 text-end pe-8">{t('prof_exp')}</div>
+            <div className="w-5/12 text-start ps-8">{t('academic')}</div>
           </div>
 
           <div className="space-y-20"> {/* Increased spacing between Time Blocks */}
@@ -26,17 +29,17 @@ export const Timeline = () => {
                 <div className="w-full lg:w-5/12 flex flex-col items-end gap-6">
                   {row.work && row.work.length > 0 ? (
                     row.work.map((job, jobIndex) => (
-                      <div key={jobIndex} className="w-full lg:pr-8 relative">
+                      <div key={jobIndex} className="w-full lg:pe-8 relative">
                         {/* Connector Dot (Only for the first item in the list) */}
                         {jobIndex === 0 && (
-                          <span className="hidden lg:block absolute top-6 -right-9.25 w-2.5 h-2.5 bg-indigo-500 rounded-full z-20" />
+                          <span className="hidden lg:block absolute top-6 -end-9.25 w-2.5 h-2.5 bg-indigo-500 rounded-full z-20" />
                         )}
                         
                         <div className="bg-neutral-900/20 p-6 rounded-xl border border-neutral-800/50 hover:border-neutral-700 transition-colors h-full">
-                          <h3 className="text-xl font-bold text-white mb-1">{job.title}</h3>
-                          <p className="text-indigo-400 text-sm font-semibold mb-3">{job.organization}</p>
+                          <h3 className="text-xl font-bold text-white mb-1">{t(`${job.title}.title`)}</h3>
+                          <p className="text-indigo-400 text-sm font-semibold mb-3">{t(`${job.title}.org`)}</p>
                           <p className="text-neutral-400 text-sm leading-relaxed">
-                            {job.description}
+                            {t(`${job.title}.desc`)}
                           </p>
                         </div>
                       </div>
@@ -59,17 +62,17 @@ export const Timeline = () => {
                 <div className="w-full lg:w-5/12 flex flex-col items-start gap-6 mt-6 lg:mt-0">
                   {row.education && row.education.length > 0 ? (
                     row.education.map((edu, eduIndex) => (
-                      <div key={eduIndex} className="w-full lg:pl-8 relative">
+                      <div key={eduIndex} className="w-full lg:ps-8 relative">
                          {/* Connector Dot (Only for the first item) */}
                           {eduIndex === 0 && (
-                            <span className="hidden lg:block absolute top-6 -left-9.25 w-2.5 h-2.5 bg-emerald-500 rounded-full z-20" />
+                            <span className="hidden lg:block absolute top-6 -start-9.25 w-2.5 h-2.5 bg-emerald-500 rounded-full z-20" />
                           )}
                           
                           <div className="bg-neutral-900/20 p-6 rounded-xl border border-neutral-800/50 hover:border-neutral-700 transition-colors h-full">
-                            <h3 className="text-xl font-bold text-white mb-1">{edu.title}</h3>
-                            <p className="text-emerald-400 text-sm font-semibold mb-3">{edu.organization}</p>
+                            <h3 className="text-xl font-bold text-white mb-1">{t(`${edu.title}.title`)}</h3>
+                            <p className="text-emerald-400 text-sm font-semibold mb-3">{t(`${edu.title}.org`)}</p>
                             <p className="text-neutral-400 text-sm leading-relaxed">
-                              {edu.description}
+                              {t(`${edu.title}.desc`)}
                             </p>
                           </div>
                       </div>

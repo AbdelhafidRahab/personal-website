@@ -18,6 +18,10 @@
     "intro": "Expert in creating digital solutions. Designing, building, and shipping systems that address user needs and deliver smooth experiences is where I excel. Freelancing has equipped me to expertly manage every project phase: planning, requirements, design, writing clean/maintainable code, testing, and production deployment."
   },
   "Timeline": {
+    "journey": "Journey",
+    "experience": "& Experience",
+    "prof_exp": "Professional Experience",
+    "academic": "Academic Career",
     "intaj": {
       "title": "Full Stack Developer",
       "org": "@Intaj Company",
@@ -50,6 +54,11 @@
     }
   },
   "Skills": {
+    "title": "Skills",
+    "categories": {
+      "technical": "Technical Skills",
+      "soft": "Soft Skills"
+    },
     "problem_solving": "Problem Solving",
     "product_thinking": "Product Thinking",
     "system_design": "System Design",
