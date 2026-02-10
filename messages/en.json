@@ -14,6 +14,11 @@
       "message_min": "Message must be at least 10 characters."
     }
   },
+  "Hero": {
+    "name": "Abdelhafid Rahab",
+    "role": "Full Stack Engineer &",
+    "ai": "AI Enthusiast"
+  },
   "About": {
     "intro": "Expert in creating digital solutions. Designing, building, and shipping systems that address user needs and deliver smooth experiences is where I excel. Freelancing has equipped me to expertly manage every project phase: planning, requirements, design, writing clean/maintainable code, testing, and production deployment."
   },
@@ -70,6 +75,9 @@
     "project_management": "Project Management"
   },
   "Projects": {
+    "tech_used": "The Technologies I used:",
+    "live_demo": "Live Demo",
+    "view_code": "Code",
     "1tik": {
       "title": "1Tik Social Network",
       "desc": "The largest social networking platform in Algeria. Core member of the team, Responsible for critical modules, ensuring scalability and high performance.",

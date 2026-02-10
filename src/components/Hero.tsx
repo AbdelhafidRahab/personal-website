@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { aboutIntro } from "@/lib/data";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export const Hero = () => {
+  const t = useTranslations();
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="container mx-auto px-6">
@@ -23,19 +24,19 @@ export const Hero = () => {
 
             <div>
               <h1 className="text-2xl md:text-4xl font-bold tracking-tighter text-white mb-4">
-                Abdelhafid Rahab
+                {t('Hero.name')}
               </h1>
               <h2 className="text-l md:text-xl font-medium text-neutral-400">
-                Full Stack Engineer & 
-                <span className="heading-gradient font-bold"> AI Enthusiast</span>
+                {t('Hero.role')}{" "}
+                <span className="heading-gradient font-bold">{t('Hero.ai')}</span>
               </h2>
             </div>
           </div>
 
           {/* Right Column: Bio */}
-          <div className="lg:border-l lg:border-neutral-800 lg:pl-12 py-4">
+          <div className="lg:border-s lg:border-neutral-800 lg:ps-12 py-4">
             <p className="text-center lg:text-start text-lg md:text-xl text-neutral-300 leading-relaxed">
-              {aboutIntro}
+              {t('About.intro')}
             </p>
           </div>
 
