@@ -108,5 +108,9 @@
       "role": "Creator",
       "stats": "Open Source"
     }
+  },
+  "ComingSoon": {
+    "badge_default": "Coming Soon...",
+    "return_home": "Return Home"
   }
 }

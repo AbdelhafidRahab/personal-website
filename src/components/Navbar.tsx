@@ -63,7 +63,7 @@ export const Navbar = () => {
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
-              <li key={link.name}>
+              <li key={link.href}>
                 <Link 
                   href={link.href} 
                   className={`
@@ -115,7 +115,7 @@ export const Navbar = () => {
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
-                <li key={link.name} className="w-full">
+                <li key={link.href} className="w-full">
                   <Link 
                     href={link.href} 
                     className={`

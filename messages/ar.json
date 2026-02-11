@@ -108,5 +108,9 @@
       "role": "منشئ",
       "stats": "مفتوح المصدر"
     }
+  },
+  "ComingSoon": {
+    "badge_default": "...قريباً",
+    "return_home": "العودة للرئيسية"
   }
 }
