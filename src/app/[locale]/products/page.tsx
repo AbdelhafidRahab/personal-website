@@ -1,11 +1,12 @@
 import { ComingSoon } from "@/components/ComingSoon";
+import { useTranslations } from "next-intl";
 
 export default function ProductsPage() {
+  const t = useTranslations('ProductsPage');
   return (
-    <ComingSoon 
-      title="Digital Products"
-      description="Stay tuned for the launch."
-      badge="Under Development"
+    <ComingSoon
+      title={t('title')}
+      badge={t('badge')}
     />
   );
 }

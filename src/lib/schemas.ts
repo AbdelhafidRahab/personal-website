@@ -15,7 +15,7 @@ const contactFormSchemaStatic = z.object(baseSchemaShape);
 
 // 2. Export a FUNCTION that creates the schema with translations
 // We pass the 't' translator function to it
-export const createContactSchema = (t: any) => z.object({
+export const createContactSchema = (t: (key: string) => string) => z.object({
   name: z.string().min(3, { message: t("name_min") }),
   email: z.string().email({ message: t("email_invalid") }),
   subject: z.string().min(5, { message: t("subject_min") }),

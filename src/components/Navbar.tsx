@@ -7,19 +7,19 @@ import { useTranslations } from "next-intl";
 
 const Icons = {
   Home: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
   ),
   Projects: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>
   ),
   Contact: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
   ),
   Products: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22v-10"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m7.5 4.27 9 5.15" /><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /><path d="m3.3 7 8.7 5 8.7-5" /><path d="M12 22v-10" /></svg>
   ),
   Academy: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
   ),
 };
 
@@ -54,22 +54,22 @@ export const Navbar = () => {
 
         {/* Language Switcher (Desktop: Absolute Left) */}
         <div className="hidden md:flex absolute left-6 gap-2">
-            <button onClick={() => switchLanguage('en')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">English</button>
-            <button onClick={() => switchLanguage('ar')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">العربية</button>
+          <button onClick={() => switchLanguage('en')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">{t('english')}</button>
+          <button onClick={() => switchLanguage('ar')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">{t('arabic')}</button>
         </div>
-        
+
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
               <li key={link.href}>
-                <Link 
-                  href={link.href} 
+                <Link
+                  href={link.href}
                   className={`
                     flex items-center gap-2 text-sm font-medium transition-all duration-200 border-b-2 py-1
-                    ${active 
-                      ? "text-white border-white" 
+                    ${active
+                      ? "text-white border-white"
                       : "text-neutral-400 border-transparent hover:text-neutral-200 hover:border-neutral-700"}
                   `}
                 >
@@ -85,11 +85,11 @@ export const Navbar = () => {
         <div className="md:hidden flex w-full justify-end">
           {/* Language Switcher (Mobile) */}
           <div className="flex gap-2">
-              <button onClick={() => switchLanguage('en')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">English</button>
-              <button onClick={() => switchLanguage('ar')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">العربية</button>
+            <button onClick={() => switchLanguage('en')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">English</button>
+            <button onClick={() => switchLanguage('ar')} className="text-xs font-bold px-2 py-1 rounded bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800">العربية</button>
           </div>
-            
-          <button 
+
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="relative z-50 text-neutral-300 hover:text-white transition-colors p-2"
             aria-label="Toggle menu"
@@ -116,12 +116,12 @@ export const Navbar = () => {
               const active = isActive(link.href);
               return (
                 <li key={link.href} className="w-full">
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className={`
                       flex items-center justify-center gap-4 text-xl font-medium py-4 rounded-xl transition-all
-                      ${active 
-                        ? "text-white bg-neutral-900 border border-neutral-800" 
+                      ${active
+                        ? "text-white bg-neutral-900 border border-neutral-800"
                         : "text-neutral-500 bg-black/95 backdrop-blur-sm hover:text-white"}
                     `}
                     onClick={() => setIsOpen(false)}
