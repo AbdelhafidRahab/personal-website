@@ -6,6 +6,7 @@ import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { JsonLd } from "@/components/JsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +30,60 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const baseUrl = 'https://abdelhafidrahab.net';
+  const url = `${baseUrl}/${locale}`;
 
   return {
-    title: t('title'),
-    description: t('description')
+    metadataBase: new URL(baseUrl),
+    title: {
+      default: t('title'),
+      template: `%s | ${t('title')}`
+    },
+    description: t('description'),
+    keywords: ["Full Stack Engineer", "Software Engineer", "Full Stack Developer", "Nest.js", "Angular.js", "React.js", "Next.js", "Node.js", "Flutter", "Abdelhafid Rahab", "Algeria", "Digital Solutions", "Expert"],
+    authors: [{ name: "Abdelhafid Rahab", url: baseUrl }],
+    creator: "Abdelhafid Rahab",
+    openGraph: {
+      type: "website",
+      locale: locale,
+      url: url,
+      title: t('title'),
+      description: t('description'),
+      siteName: "Abdelhafid Rahab",
+      images: [
+        {
+          url: "/personal-website.png", // Needs to be added to public
+          width: 1200,
+          height: 630,
+          alt: t('title'),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t('title'),
+      description: t('description'),
+      images: ["/personal-website.png"],
+      creator: "@AbdelhafidRahab",
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        'en': `${baseUrl}/en`,
+        'ar': `${baseUrl}/ar`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 
@@ -67,6 +118,7 @@ export default async function RootLayout({
     <html lang={locale} dir={direction} className="scroll-smooth">
       <body className={`${fontClass} antialiased bg-black text-neutral-200`}>
         <NextIntlClientProvider messages={messages}>
+          <JsonLd />
           <Navbar />
           {children}
           <WhatsAppButton />

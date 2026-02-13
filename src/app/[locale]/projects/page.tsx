@@ -32,6 +32,7 @@ export default function ProjectsPage() {
           <div className="p-1 bg-neutral-900/50 border border-neutral-800 rounded-xl inline-flex">
             <button
               onClick={() => setActiveTab('proprietary')}
+              aria-pressed={activeTab === 'proprietary'}
               className={`
                 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300
                 ${activeTab === 'proprietary'
@@ -43,6 +44,7 @@ export default function ProjectsPage() {
             </button>
             <button
               onClick={() => setActiveTab('open-source')}
+              aria-pressed={activeTab === 'open-source'}
               className={`
                 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300
                 ${activeTab === 'open-source'
