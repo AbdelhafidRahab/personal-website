@@ -23,3 +23,13 @@ export const createContactSchema = (t: (key: string) => string) => z.object({
   // Honeypot field (hidden from users, filled by bots)
   _gotcha: z.string().optional(),
 });
+
+// 3. Export a default schema for Server-Side Validation (route.ts)
+// The API route doesn't need translated error messages, just validation logic.
+export const contactFormSchema = z.object({
+  name: z.string().min(3),
+  email: z.string().email(),
+  subject: z.string().min(5),
+  message: z.string().min(10),
+  _gotcha: z.string().optional(),
+});

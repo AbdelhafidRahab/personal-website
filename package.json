@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "analyze": "cross-env ANALYZE=true next build --webpack"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@next/bundle-analyzer": "^16.1.6",
     "@react-email/components": "^1.0.6",
     "@react-email/render": "^2.0.4",
+    "cross-env": "^10.1.0",
     "next": "16.1.3",
     "next-intl": "^4.8.1",
     "react": "19.2.3",

@@ -111,6 +111,20 @@ export const projectsData: Project[] = [
     },
   },
   {
+    id: "personal",
+    title: "personal",
+    description: "personal",
+    image: "/projects/personal-website.png",
+    techStack: ["Next.js", "Tailwind CSS", "Git", "GitHub"],
+    category: "open-source",
+    role: "Creator",
+    stats: "Open Source",
+    links: {
+      demo: "https://abdelhafidrahab.net",
+      repo: "https://github.com/AbdelhafidRahab/personal-website",
+    },
+  },
+  {
     id: "amazon",
     title: "amazon",
     description: "amazon",
@@ -148,19 +162,5 @@ export const projectsData: Project[] = [
     links: {
       repo: "https://github.com/AbdelhafidRahab/whatsapp-clone"
     },
-  },
-  {
-    id: "personal",
-    title: "personal",
-    description: "personal",
-    image: "/projects/personal-website.png",
-    techStack: ["Next.js", "Tailwind CSS", "Git", "GitHub"],
-    category: "open-source",
-    role: "Creator",
-    stats: "Open Source",
-    links: {
-      demo: "https://abdelhafidrahab.net",
-      repo: "https://github.com/AbdelhafidRahab/personal-website",
-    },
-  },
+  }
 ];

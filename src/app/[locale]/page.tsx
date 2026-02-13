@@ -1,6 +1,8 @@
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/Hero";
-import { Skills } from "@/components/Skills";
-import { Timeline } from "@/components/Timeline";
+
+const Skills = dynamic(() => import("@/components/Skills").then(mod => mod.Skills));
+const Timeline = dynamic(() => import("@/components/Timeline").then(mod => mod.Timeline));
 
 export default function Home() {
   return (
@@ -8,13 +10,11 @@ export default function Home() {
       {/* Background Gradients */}
       <div className="absolute top-0 -left-20 w-125 h-125 bg-white/5 rounded-full blur-[120px] z-10" />
       <div className="absolute bottom-0 -right-20 w-125 h-125 bg-neutral-800/10 rounded-full blur-[120px] z-10" />
-      
+
       {/* Sections */}
       <Hero />
       <Timeline />
       <Skills />
-      
-      {/* for About/Skills sections here later */}
     </main>
   );
 }
