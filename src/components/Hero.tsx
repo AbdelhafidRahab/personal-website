@@ -8,18 +8,19 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Column: Identity & Contact */}
           <div className="flex flex-col items-center text-center space-y-8">
-            
+
             <div className="w-60 h-60 rounded-full border-2 border-neutral-700 overflow-hidden relative shadow-2xl shadow-neutral-900/50">
-                <Image 
-                  src="/me.jpg" 
-                  alt="Abdelhafid Rahab" 
-                  fill 
-                  className="object-cover"
-                  priority // Loads image immediately for performance
-                />
+              <Image
+                src="/me.jpg"
+                alt="Abdelhafid Rahab"
+                fill
+                sizes="240px"
+                className="object-cover"
+                priority // Loads image immediately for performance
+              />
             </div>
 
             <div>
