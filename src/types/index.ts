@@ -4,8 +4,16 @@ export interface Project {
   description: string;
   image: string; // Path to image in public folder
   techStack: string[]; // specific technologies used by me
-  category: 'proprietary' | 'open-source';
-  role: 'Owner' | 'Creator' | 'Co-Creator' | 'Core Contributor' | 'Contributor' | 'Full Stack Developer' | 'Frontend Developer' | 'Backend Developer'; 
+  category: "proprietary" | "open-source";
+  role:
+    | "Owner"
+    | "Creator"
+    | "Co-Creator"
+    | "Core Contributor"
+    | "Contributor"
+    | "Full Stack Developer"
+    | "Frontend Developer"
+    | "Backend Developer";
   stats?: string;
   links: {
     demo?: string; // Live Link
@@ -28,6 +36,6 @@ export interface TimelineRow {
 
 export interface Skill {
   name: string;
-  category: 'technical' | 'soft';
+  category: "technical" | "soft";
   highlight?: boolean;
 }

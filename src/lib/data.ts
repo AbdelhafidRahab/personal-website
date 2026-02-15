@@ -9,9 +9,9 @@ export const timelineData: TimelineRow[] = [
       {
         title: "intaj",
         organization: "intaj",
-        description: "intaj"
+        description: "intaj",
       },
-    ]
+    ],
   },
   {
     period: "Dec 2024 - Present",
@@ -19,9 +19,9 @@ export const timelineData: TimelineRow[] = [
       {
         title: "self_employed",
         organization: "self_employed",
-        description: "self_employed"
-      }
-    ]
+        description: "self_employed",
+      },
+    ],
   },
   {
     period: "2023 - 2025",
@@ -29,21 +29,21 @@ export const timelineData: TimelineRow[] = [
       {
         title: "freelance_web",
         organization: "freelance_web",
-        description: "freelance_web"
+        description: "freelance_web",
       },
       {
         title: "freelance_mobile",
         organization: "freelance_mobile",
-        description: "freelance_mobile"
+        description: "freelance_mobile",
       },
     ],
     education: [
       {
         title: "master",
         organization: "master",
-        description: "master"
-      }
-    ]
+        description: "master",
+      },
+    ],
   },
   {
     period: "2020 - 2023",
@@ -51,10 +51,10 @@ export const timelineData: TimelineRow[] = [
       {
         title: "bachelor",
         organization: "bachelor",
-        description: "bachelor"
-      }
-    ]
-  }
+        description: "bachelor",
+      },
+    ],
+  },
 ];
 
 export const skills: Skill[] = [
@@ -102,7 +102,17 @@ export const projectsData: Project[] = [
     title: "1tik",
     description: "1tik",
     image: "/projects/1tik.jpeg",
-    techStack: ["TypeScript", "Node.js", "NestJS", "PostgreSQL", "Redis", "VueJs", "Docker", "Git", "GitLab"],
+    techStack: [
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "PostgreSQL",
+      "Redis",
+      "VueJs",
+      "Docker",
+      "Git",
+      "GitLab",
+    ],
     category: "proprietary", // Changed from 'deployed' to match your input
     role: "Core Contributor",
     stats: "150k+ Users",
@@ -134,7 +144,7 @@ export const projectsData: Project[] = [
     role: "Creator",
     stats: "Open Source",
     links: {
-      repo: "https://github.com/AbdelhafidRahab/Clone_Amazon_Website"
+      repo: "https://github.com/AbdelhafidRahab/Clone_Amazon_Website",
     },
   },
   {
@@ -147,7 +157,7 @@ export const projectsData: Project[] = [
     role: "Creator",
     stats: "Open Source",
     links: {
-      repo: "https://github.com/AbdelhafidRahab/medium-clone"
+      repo: "https://github.com/AbdelhafidRahab/medium-clone",
     },
   },
   {
@@ -160,7 +170,7 @@ export const projectsData: Project[] = [
     role: "Creator",
     stats: "Open Source",
     links: {
-      repo: "https://github.com/AbdelhafidRahab/whatsapp-clone"
+      repo: "https://github.com/AbdelhafidRahab/whatsapp-clone",
     },
-  }
+  },
 ];

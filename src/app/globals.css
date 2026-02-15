@@ -10,11 +10,11 @@
   .glass-nav {
     @apply bg-neutral-950 backdrop-blur-md border-b border-white/10;
   }
-  
+
   .section-container {
     @apply container mx-auto px-4 sm:px-6 lg:px-8 py-20;
   }
-  
+
   .heading-gradient {
     @apply bg-linear-to-b from-white to-white/50 bg-clip-text text-transparent;
   }

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     if (_gotcha) return NextResponse.json({ success: true });
 
     // 3. ACTUAL Email Sending
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "onboarding@resend.dev", // Resend provides this for testing
       to: ["mrabdelhafidrahab@gmail.com"], // Your actual email
       subject: `Personal Website: ${subject}`,

@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/Hero";
 
-const Skills = dynamic(() => import("@/components/Skills").then(mod => mod.Skills));
-const Timeline = dynamic(() => import("@/components/Timeline").then(mod => mod.Timeline));
+const Skills = dynamic(() => import("@/components/Skills").then((mod) => mod.Skills));
+const Timeline = dynamic(() => import("@/components/Timeline").then((mod) => mod.Timeline));
 
 export default function Home() {
   return (

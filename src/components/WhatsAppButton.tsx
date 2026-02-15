@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export const WhatsAppButton = () => {
-  const t = useTranslations('WhatsAppButton');
+  const t = useTranslations("WhatsAppButton");
   const phoneNumber = "213541710168";
 
   return (
@@ -13,10 +13,13 @@ export const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 end-6 z-50 flex items-center justify-center w-14 h-14 bg-neutral-900 border border-neutral-800 text-neutral-400 rounded-full shadow-lg hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:scale-110 transition-all duration-300 group"
-      aria-label={t('ariaLabel')}
+      aria-label={t("ariaLabel")}
     >
       {/* Pulse Effect */}
-      <span className="absolute inline-flex h-full w-full rounded-full bg-neutral-700 opacity-20 animate-ping group-hover:hidden" aria-hidden="true"></span>
+      <span
+        className="absolute inline-flex h-full w-full rounded-full bg-neutral-700 opacity-20 animate-ping group-hover:hidden"
+        aria-hidden="true"
+      ></span>
 
       {/* Icon relative to stay on top */}
       <svg

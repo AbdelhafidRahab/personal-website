@@ -1,9 +1,9 @@
-import { MetadataRoute } from 'next';
-import { routing } from '@/i18n/routing';
+import { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://abdelhafidrahab.net';
-  const routes = ['', '/projects', '/contact', '/products', '/academy'];
+  const baseUrl = "https://abdelhafidrahab.net";
+  const routes = ["", "/projects", "/contact", "/products", "/academy"];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
@@ -12,8 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       sitemapEntries.push({
         url: `${baseUrl}/${locale}${route}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: route === '' ? 1 : 0.8,
+        changeFrequency: "weekly",
+        priority: route === "" ? 1 : 0.8,
         alternates: {
           languages: {
             en: `${baseUrl}/en${route}`,

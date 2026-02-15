@@ -8,12 +8,12 @@ import { createContactSchema, ContactFormData } from "@/lib/schemas";
 import Link from "next/link";
 
 export default function ContactPage() {
-  const t = useTranslations('ContactPage');
-  const tValidation = useTranslations('Contact.validation');
+  const t = useTranslations("ContactPage");
+  const tValidation = useTranslations("Contact.validation");
   const contactFormSchema = createContactSchema(tValidation);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   // React Hook Form initialization with Zod
   const {
@@ -27,22 +27,22 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus("idle");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Failed to send message');
+      if (!response.ok) throw new Error("Failed to send message");
 
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       reset(); // Clear form
     } catch (error) {
       console.error(error);
-      setSubmitStatus('error');
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -55,19 +55,15 @@ export default function ContactPage() {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            {t('title_prefix')} <span className="heading-gradient">{t('title_gradient')}</span>
+            {t("title_prefix")} <span className="heading-gradient">{t("title_gradient")}</span>
           </h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
-            {t('description')}
-          </p>
+          <p className="text-neutral-400 max-w-2xl mx-auto text-lg">{t("description")}</p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 items-start">
-
           {/* Socials */}
           <div className="space-y-12">
             <div>
@@ -102,53 +98,68 @@ export default function ContactPage() {
           {/* Form */}
           <div className="bg-neutral-900/30 backdrop-blur-xl border border-white/5 p-8 rounded-2xl shadow-2xl">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-
               {/* Honeypot Field (Hidden) */}
               <input type="text" className="hidden" {...register("_gotcha")} />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-neutral-400">{t('form.name_label')}</label>
+                  <label className="text-sm font-medium text-neutral-400">
+                    {t("form.name_label")}
+                  </label>
                   <input
                     {...register("name")}
                     type="text"
-                    placeholder={t('form.name_placeholder')}
+                    placeholder={t("form.name_placeholder")}
                     className="w-full bg-neutral-950/50 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
-                  {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
+                  {errors.name && (
+                    <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-neutral-400">{t('form.email_label')}</label>
+                  <label className="text-sm font-medium text-neutral-400">
+                    {t("form.email_label")}
+                  </label>
                   <input
                     {...register("email")}
                     type="email"
-                    placeholder={t('form.email_placeholder')}
+                    placeholder={t("form.email_placeholder")}
                     className="w-full bg-neutral-950/50 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
-                  {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
+                  {errors.email && (
+                    <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>
+                  )}
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-neutral-400">{t('form.subject_label')}</label>
+                <label className="text-sm font-medium text-neutral-400">
+                  {t("form.subject_label")}
+                </label>
                 <input
                   {...register("subject")}
                   type="text"
-                  placeholder={t('form.subject_placeholder')}
+                  placeholder={t("form.subject_placeholder")}
                   className="w-full bg-neutral-950/50 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                 />
-                {errors.subject && <p className="text-red-400 text-xs mt-1">{errors.subject.message}</p>}
+                {errors.subject && (
+                  <p className="text-red-400 text-xs mt-1">{errors.subject.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-neutral-400">{t('form.message_label')}</label>
+                <label className="text-sm font-medium text-neutral-400">
+                  {t("form.message_label")}
+                </label>
                 <textarea
                   {...register("message")}
                   rows={5}
-                  placeholder={t('form.message_placeholder')}
+                  placeholder={t("form.message_placeholder")}
                   className="w-full bg-neutral-950/50 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none"
                 ></textarea>
-                {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>}
+                {errors.message && (
+                  <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>
+                )}
               </div>
 
               <button
@@ -156,28 +167,29 @@ export default function ContactPage() {
                 disabled={isSubmitting}
                 className={`
                   w-full py-4 rounded-lg font-bold text-black transition-all duration-300
-                  ${isSubmitting
-                    ? "bg-neutral-600 cursor-not-allowed"
-                    : "bg-white hover:bg-neutral-200 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"}
+                  ${
+                    isSubmitting
+                      ? "bg-neutral-600 cursor-not-allowed"
+                      : "bg-white hover:bg-neutral-200 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+                  }
                 `}
               >
-                {isSubmitting ? t('form.sending_button') : t('form.submit_button')}
+                {isSubmitting ? t("form.sending_button") : t("form.submit_button")}
               </button>
 
               {/* Status Messages */}
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 text-sm text-center">
-                  {t('form.success_message')}
+                  {t("form.success_message")}
                 </div>
               )}
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm text-center">
-                  {t('form.error_message')}
+                  {t("form.error_message")}
                 </div>
               )}
             </form>
           </div>
-
         </div>
       </div>
     </main>
