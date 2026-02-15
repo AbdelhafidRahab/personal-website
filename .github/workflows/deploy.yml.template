@@ -1,0 +1,55 @@
+# Deployment Workflow (Optional)
+# Uncomment and configure based on your hosting platform
+
+# name: Deploy to Production
+#
+# on:
+#   push:
+#     branches: [main]
+#
+# jobs:
+#   deploy:
+#     name: Deploy
+#     runs-on: ubuntu-latest
+#     
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+#
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "20"
+#           cache: "npm"
+#
+#       - name: Install dependencies
+#         run: npm ci
+#
+#       - name: Build
+#         run: npm run build
+#         env:
+#           SKIP_ENV_VALIDATION: true
+#
+#       # === Netlify Deployment ===
+#       # - name: Deploy to Netlify
+#       #   uses: nwtgck/actions-netlify@v3
+#       #   with:
+#       #     publish-dir: './.next'
+#       #     production-deploy: true
+#       #   env:
+#       #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+#       #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+#
+#       # === Custom Server (SSH) ===
+#       # - name: Deploy via SSH
+#       #   uses: appleboy/ssh-action@v1.0.0
+#       #   with:
+#       #     host: ${{ secrets.SSH_HOST }}
+#       #     username: ${{ secrets.SSH_USERNAME }}
+#       #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+#       #     script: |
+#       #       cd /var/www/your-app
+#       #       git pull origin main
+#       #       npm ci
+#       #       npm run build
+#       #       pm2 restart your-app
