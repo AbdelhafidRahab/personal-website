@@ -3,13 +3,14 @@ import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/schemas";
 import { EmailTemplate } from "@/components/EmailTemplate";
 
-if (!process.env.RESEND_API_KEY) {
-  console.error("❌ ERROR: RESEND_API_KEY is missing in .env.local");
-}
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
+  if (!process.env.RESEND_API_KEY) {
+    console.error("❌ ERROR: RESEND_API_KEY is missing");
+    return NextResponse.json({ error: "Configuration Error" }, { status: 500 });
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const body = await request.json();
 
