@@ -1,7 +1,11 @@
 import { useTranslations } from "next-intl";
-import { skills } from "@/lib/data";
+import { Skill } from "@/types";
 
-export const Skills = () => {
+interface SkillsProps {
+  data: Skill[];
+}
+
+export const Skills = ({ data }: SkillsProps) => {
   const t = useTranslations("Skills");
   const categories = ["technical", "soft"] as const;
 
@@ -20,7 +24,7 @@ export const Skills = () => {
                 <span className="h-px flex-1 bg-neutral-800" aria-hidden="true"></span>
               </h3>
               <ul className="flex flex-wrap gap-3">
-                {skills
+                {data
                   .filter((skill) => skill.category === category)
                   .map((skill) => (
                     <li

@@ -1,14 +1,5 @@
 import { z } from "zod";
 
-// the shape static for TypeScript types
-const baseSchemaShape = {
-  name: z.string(),
-  email: z.string(),
-  subject: z.string(),
-  message: z.string(),
-  _gotcha: z.string().optional(),
-};
-
 // 1. Export the TYPE for form validation (used by react-hook-form)
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 

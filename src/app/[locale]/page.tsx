@@ -1,10 +1,20 @@
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/Hero";
+import { AboutService } from "@/features/about/services/AboutService";
 
-const Skills = dynamic(() => import("@/components/Skills").then((mod) => mod.Skills));
-const Timeline = dynamic(() => import("@/components/Timeline").then((mod) => mod.Timeline));
+const Skills = dynamic(() =>
+  import("@/features/about/components/Skills").then((mod) => mod.Skills)
+);
+const Timeline = dynamic(() =>
+  import("@/features/about/components/Timeline").then((mod) => mod.Timeline)
+);
 
-export default function Home() {
+export default async function Home() {
+  // 1. Decoupled Architecture: The Server Component acts as a Controller
+  // It fetches data from the Service layer and passes it down purely as props.
+  const timelineData = await AboutService.getTimeline();
+  const skillsData = await AboutService.getSkills();
+
   return (
     <main className="relative w-full min-h-screen overflow-hidden bg-neutral-950">
       {/* Background Gradients */}
@@ -13,8 +23,8 @@ export default function Home() {
 
       {/* Sections */}
       <Hero />
-      <Timeline />
-      <Skills />
+      <Timeline data={timelineData} />
+      <Skills data={skillsData} />
     </main>
   );
 }

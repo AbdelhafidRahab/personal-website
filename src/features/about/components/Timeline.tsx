@@ -1,7 +1,11 @@
 import { useTranslations } from "next-intl";
-import { timelineData } from "@/lib/data";
+import { TimelineRow } from "@/types";
 
-export const Timeline = () => {
+interface TimelineProps {
+  data: TimelineRow[];
+}
+
+export const Timeline = ({ data }: TimelineProps) => {
   const t = useTranslations("Timeline");
 
   return (
@@ -24,7 +28,7 @@ export const Timeline = () => {
           <div className="space-y-20">
             {" "}
             {/* Increased spacing between Time Blocks */}
-            {timelineData.map((row, rowIndex) => (
+            {data.map((row, rowIndex) => (
               <div
                 key={rowIndex}
                 className="relative flex flex-col lg:flex-row items-stretch justify-between group"
