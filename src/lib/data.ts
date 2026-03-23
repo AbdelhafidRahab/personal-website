@@ -108,7 +108,7 @@ export const projectsData: Project[] = [
       "NestJS",
       "PostgreSQL",
       "Redis",
-      "VueJs",
+      "AngularJs",
       "Docker",
       "Git",
       "GitLab",
